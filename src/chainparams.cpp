@@ -120,7 +120,7 @@ public:
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 100 * COIN;
+        txNew.vout[0].nValue = 0 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
@@ -128,13 +128,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1527713082;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 3361360;
+        genesis.nNonce = 711574;
 		
         hashGenesisBlock = genesis.GetHash();
 	printf("%s\n", hashGenesisBlock.ToString().c_str());
 	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
         assert(hashGenesisBlock == uint256("0x0000045feb12c564cf6d08953356cdd6fd021c75843a5a6194e525b818c965c9"));
-        assert(genesis.hashMerkleRoot == uint256("0x181a8fabea7c1b5207c5bcf7cb1a490a7153c22ee97955bc344690243dee4819"));
+        assert(genesis.hashMerkleRoot == uint256("0x000009e824d2fde14ac7c40eefddeefbfc988ea44a1b449bc8c818624d5d4c80"));
         
 
         vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
