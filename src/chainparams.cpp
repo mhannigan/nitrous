@@ -111,7 +111,7 @@ public:
         nLastPOWBlock = 500;
         nMaturity = 201;
         nMasternodeCountDrift = 20;
-		nMasternodeColleteralLimxDev = 1000; //Params().MasternodeColleteralLimxDev()
+		nMasternodeColleteralLimxDev = 2000; //Params().MasternodeColleteralLimxDev()
         nModifierUpdateBlock = 1; // we use the version 2 for dmd
         nMaxMoneyOut = 250000000 * COIN;
 
@@ -120,7 +120,7 @@ public:
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 0 * COIN;
+        txNew.vout[0].nValue = 250 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
@@ -128,13 +128,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1527713082;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 1235313098;
+        genesis.nNonce = 1236670153;
 		
         hashGenesisBlock = genesis.GetHash();
 	printf("%s\n", hashGenesisBlock.ToString().c_str());
 	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0x0000060f6120027057c1aa4f61419bc8a3089af8b31efe8676e2fe30cb7dbfb5"));
-        assert(genesis.hashMerkleRoot == uint256("0xa2aae15489377e46591671a9f4ac8bbed76469e01823643b79f28091d74fee43"));
+        assert(hashGenesisBlock == uint256("0x000001e107e6a788e42b23384b5c1d9badc0791a172778b313313ec63fa3ff8a"));
+        assert(genesis.hashMerkleRoot == uint256("0xde781139db01c4537e0b6a82c546c090306d8eac5b81ae5e7302edbb6ddc2528"));
         
 
         vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
@@ -205,14 +205,16 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1527713082;
-        genesis.nNonce = 257105;
+        genesis.nNonce = 1236670153;
 
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000070ea16c302f5772fd80c9fb5f3e2f39e4982dd29aaf256501f2c474cf6e"));
+        assert(hashGenesisBlock == uint256("0x000001e107e6a788e42b23384b5c1d9badc0791a172778b313313ec63fa3ff8a"));
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
+        //vFixedSeeds.clear();
+        //vSeeds.clear();
+        vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
+        vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 53);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 112);
@@ -274,14 +276,14 @@ public:
         bnProofOfWorkLimit = ~uint256(0) >> 1;
         genesis.nTime = 1527713082;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 1236;
+        genesis.nNonce = 1234355680;
 		
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 43323;
-        assert(hashGenesisBlock == uint256("0x66c800484608d4717013bb4289220a1a04baa6ef9a47a0c182de2dd254e85380"));
+        assert(hashGenesisBlock == uint256("0x19e387b61a900351846cef440a1e93c1f8f7e978e6ea5adf052089887734e914"));
 
-        vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
-        vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
+        //vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
+        //vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
         //vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds. Yes it does.
         //vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds. It does now!
 
