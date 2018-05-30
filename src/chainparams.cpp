@@ -55,14 +55,14 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x00000121496b18414727aa71044bbdbfdc6236f33e4092870213eda75cd5fe1d"));
+    boost::assign::map_list_of(0, uint256("0x00"));
 ;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1526012494, // * UNIX timestamp of last checkpoint block
+    0, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    1200        // * estimated number of transactions per day after checkpoint
+    0        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -93,10 +93,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0x64;
-        pchMessageStart[1] = 0x44;
-        pchMessageStart[2] = 0x15;
-        pchMessageStart[3] = 0x54;
+        pchMessageStart[0] = 0x62;
+        pchMessageStart[1] = 0x4A;
+        pchMessageStart[2] = 0x57;
+        pchMessageStart[3] = 0x44;
         vAlertPubKey = ParseHex("04266db20be5c53b93678e2e41c9def7af38197280c65e813f682adf2ed501ac186022562dbdf2ce3204d07432660fb61ecad8e78b6b8d39c568fb892db8ecb736");
         nDefaultPort = 32323;
         bnProofOfWorkLimit = ~uint256(0) >> 20;
@@ -113,37 +113,37 @@ public:
         nMasternodeCountDrift = 20;
 	nMasternodeColleteralLimxDev = 5000; //Params().MasternodeColleteralLimxDev()
         nModifierUpdateBlock = 1; // we use the version 2 for dmd
-        nMaxMoneyOut = 61000000 * COIN;
+        nMaxMoneyOut = 250000000 * COIN;
 
-        const char* pszTimestamp = "Nitrous cryptocurrency";
+        const char* pszTimestamp = "US News and World Report 30 May 2018 / Trump Tests Midterm Message On Immigration, MS-13 'Animals' During Tenn. Rally";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-        txNew.vout[0].nValue = 0 * COIN;
+        txNew.vout[0].nValue = 100 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("04e928b57880e492fdd2f0cdfd45b52b078a32a5282b4784202ac53b1299837e271f780192a8b014d33b51a6f8bbfc4cfaa3385829452bec7b77bf2f8f97520526") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1526012494;
+        genesis.nTime = 1527713082;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 21275907;
+        genesis.nNonce = 0;
 		
         hashGenesisBlock = genesis.GetHash();
 	//printf("%s\n", hashGenesisBlock.ToString().c_str());
 	//printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0x00000121496b18414727aa71044bbdbfdc6236f33e4092870213eda75cd5fe1d"));
-        assert(genesis.hashMerkleRoot == uint256("0x2da38d94a9ee1537e3bc7a5b4488d1548c9992c592b964b7cc2852dc1ccc37fd"));
+        assert(hashGenesisBlock == uint256("0x00000bf92da5f08e82470b6d93a1cfa3102bb2d137f3e9263e4166e214dbd753"));
+        assert(genesis.hashMerkleRoot == uint256("0x2d20808b1a5fea6e46ab48374cd961325b553955e4ebb385156705a442582dc4"));
         
 
-        vSeeds.push_back(CDNSSeedData("one.nitrous.site", "one.nitrous.site"));
-        vSeeds.push_back(CDNSSeedData("two.nitrous.site", "two.nitrous.site"));
+        vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
+        vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
         //vFixedSeeds.clear();
         //vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 73);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 16);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 53);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 112);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
@@ -186,10 +186,10 @@ public:
     {
         networkID = CBaseChainParams::TESTNET;
         strNetworkID = "test";
-        pchMessageStart[0] = 0x14;
-        pchMessageStart[1] = 0x64;
-        pchMessageStart[2] = 0x54;
-        pchMessageStart[3] = 0x65;
+        pchMessageStart[0] = 0x24;
+        pchMessageStart[1] = 0x61;
+        pchMessageStart[2] = 0x5A;
+        pchMessageStart[3] = 0x66;
         vAlertPubKey = ParseHex("0485286086a0871308bf36519edb18d95bbe9b098abe14ec9b684b5255028ec644bacdbddb98a522a6bcd7ab8e7d3582d7a5b9bf59c427f7eabce447b5ba6de25f");
         nDefaultPort = 42323;
         nEnforceBlockUpgradeMajority = 51;
@@ -201,21 +201,21 @@ public:
         nLastPOWBlock = 200;
         nMaturity = 15;
         nModifierUpdateBlock = 51197; //approx Mon, 30 Apr 2018 04:00:00 GMT
-        nMaxMoneyOut = 90000000 * COIN;
+        nMaxMoneyOut = 250000000 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1526012495;
+        genesis.nTime = 1527713082;
         genesis.nNonce = 21831913;
 
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000bcce69f889fd6e4726296f46155ef6bb546c60d516f2adf77b23635cda1"));
+        assert(hashGenesisBlock == uint256("0x00000bf92da5f08e82470b6d93a1cfa3102bb2d137f3e9263e4166e214dbd753"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 83);
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 53);
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 112);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 193);
         // Testnet Nitrous BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
@@ -260,10 +260,10 @@ public:
         networkID = CBaseChainParams::REGTEST;
         strNetworkID = "regtest";
         strNetworkID = "regtest";
-        pchMessageStart[0] = 0x65;
-        pchMessageStart[1] = 0x14;
-        pchMessageStart[2] = 0x54;
-        pchMessageStart[3] = 0x64;
+        pchMessageStart[0] = 0x6A;
+        pchMessageStart[1] = 0x34;
+        pchMessageStart[2] = 0x51;
+        pchMessageStart[3] = 0x54;
         nSubsidyHalvingInterval = 150;
         nEnforceBlockUpgradeMajority = 750;
         nRejectBlockOutdatedMajority = 950;
@@ -272,16 +272,18 @@ public:
         nTargetTimespan = 24 * 60 * 60;
         nTargetSpacing = 1 * 60;
         bnProofOfWorkLimit = ~uint256(0) >> 1;
-        genesis.nTime = 1526012496;
+        genesis.nTime = 1527713082;
         genesis.nBits = 0x207fffff;
-        genesis.nNonce = 4;
+        genesis.nNonce = 1236;
 		
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 43323;
-        assert(hashGenesisBlock == uint256("0x5e828cbb4de398070df8d514e9bf669781ead032c9f76d7850e807e877fdc4bc"));
+        assert(hashGenesisBlock == uint256("0x66c800484608d4717013bb4289220a1a04baa6ef9a47a0c182de2dd254e85380"));
 
-        vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
-        vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
+        vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
+        vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
+        //vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds. Yes it does.
+        //vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds. It does now!
 
         fRequireRPCPassword = false;
         fMiningRequiresPeers = false;
