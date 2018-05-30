@@ -111,7 +111,7 @@ public:
         nLastPOWBlock = 500;
         nMaturity = 201;
         nMasternodeCountDrift = 20;
-	nMasternodeColleteralLimxDev = 5000; //Params().MasternodeColleteralLimxDev()
+		nMasternodeColleteralLimxDev = 1000; //Params().MasternodeColleteralLimxDev()
         nModifierUpdateBlock = 1; // we use the version 2 for dmd
         nMaxMoneyOut = 250000000 * COIN;
 
@@ -128,7 +128,7 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1527713082;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 0;
+        genesis.nNonce = 2909203;
 		
         hashGenesisBlock = genesis.GetHash();
 	//printf("%s\n", hashGenesisBlock.ToString().c_str());
@@ -205,7 +205,7 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1527713082;
-        genesis.nNonce = 21831913;
+        genesis.nNonce = 2909203;
 
 
         hashGenesisBlock = genesis.GetHash();
