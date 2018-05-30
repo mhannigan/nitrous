@@ -115,7 +115,7 @@ public:
         nModifierUpdateBlock = 1; // we use the version 2 for dmd
         nMaxMoneyOut = 250000000 * COIN;
 
-        const char* pszTimestamp = "US News and World Report 30 May 2018 / Trump Tests Midterm Message On Immigration, MS-13 'Animals' During Tenn. Rally";
+        const char* pszTimestamp = "US News and World Report 30 May 2018 / Trump Tests Midterm Message On Immigration, MS-13 Animals During Tenn Rally";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -128,13 +128,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime = 1527713082;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 2909203;
+        genesis.nNonce = 257105;
 		
         hashGenesisBlock = genesis.GetHash();
 	//printf("%s\n", hashGenesisBlock.ToString().c_str());
 	//printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        assert(hashGenesisBlock == uint256("0x00000bf92da5f08e82470b6d93a1cfa3102bb2d137f3e9263e4166e214dbd753"));
-        assert(genesis.hashMerkleRoot == uint256("0x2d20808b1a5fea6e46ab48374cd961325b553955e4ebb385156705a442582dc4"));
+        assert(hashGenesisBlock == uint256("0x0000070ea16c302f5772fd80c9fb5f3e2f39e4982dd29aaf256501f2c474cf6e"));
+        assert(genesis.hashMerkleRoot == uint256("0x990dcbf61f42276c3ee0467902dca262ce517442689cc322cf3b376461bb7cfb"));
         
 
         vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
@@ -205,11 +205,11 @@ public:
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1527713082;
-        genesis.nNonce = 2909203;
+        genesis.nNonce = 257105;
 
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000bf92da5f08e82470b6d93a1cfa3102bb2d137f3e9263e4166e214dbd753"));
+        assert(hashGenesisBlock == uint256("0x0000070ea16c302f5772fd80c9fb5f3e2f39e4982dd29aaf256501f2c474cf6e"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
