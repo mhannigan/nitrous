@@ -55,14 +55,14 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0x00"));
+    boost::assign::map_list_of(1527713082, uint256("0x0000060f6120027057c1aa4f61419bc8a3089af8b31efe8676e2fe30cb7dbfb5"));
 ;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    0, // * UNIX timestamp of last checkpoint block
+    1527713082, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    0        // * estimated number of transactions per day after checkpoint
+    1440        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -137,10 +137,10 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0xa2aae15489377e46591671a9f4ac8bbed76469e01823643b79f28091d74fee43"));
         
 
-        vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
-        vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
-	vSeeds.push_back(CDNSSeedData("dnsseed.brainchamber.com", "dnsseed.brainchamber.com"));
-	vSeeds.push_back(CDNSSeedData("dnsseed2.brainchamber.com", "dnsseed2.brainchamber.com"));
+        //vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
+        //vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
+	    //vSeeds.push_back(CDNSSeedData("dnsseed.brainchamber.com", "dnsseed.brainchamber.com"));
+	    //vSeeds.push_back(CDNSSeedData("dnsseed2.brainchamber.com", "dnsseed2.brainchamber.com"));
         //vFixedSeeds.clear();
         //vSeeds.clear();
 
