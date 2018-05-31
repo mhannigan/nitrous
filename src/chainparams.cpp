@@ -137,8 +137,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0xa2aae15489377e46591671a9f4ac8bbed76469e01823643b79f28091d74fee43"));
         
 
-        //vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
-        //vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
+        vSeeds.push_back(CDNSSeedData("nitrous1.brainchamber.com", "nitrous1.brainchamber.com"));
+        vSeeds.push_back(CDNSSeedData("nitrous2.brainchamber.com", "nitrous2.brainchamber.com"));
 	    //vSeeds.push_back(CDNSSeedData("dnsseed.brainchamber.com", "dnsseed.brainchamber.com"));
 	    //vSeeds.push_back(CDNSSeedData("dnsseed2.brainchamber.com", "dnsseed2.brainchamber.com"));
         //vFixedSeeds.clear();
